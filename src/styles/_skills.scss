@@ -1,0 +1,42 @@
+@use './base' as v;
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    gap: 100px; //capaz se va
+    align-items: center;
+    background-color: v.$tertiary-color;
+
+    &_sections{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &_title {
+        color: #fd7c9f;
+        //color: v.$primary-color;
+    }
+
+    &_logo-container {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &_logo {
+        font-size: 7rem;
+        color: v.$primary-color;
+        transition: all 0.3s ease;
+        filter: drop-shadow(1px 1px 10px #7ead91);
+
+
+        &:hover {
+            color: #427456;
+            filter: drop-shadow(1px 1px 10px #fd7c9f);
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use './base' as v;
+
+.projects {
+    background-color: v.$secondary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+
+    &_title{
+        color: v.$primary-color;
+    }
+    &_container{
+        display: flex;
+        gap: 50px;
+        
+    }
+
+    &_card {
+        background-color: v.$primary-color;
+        width: 300px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 20px ;
+    }
+
+    &_img {
+        border-radius: 35px 35px 0px 0px;
+        height: 200px;
+        padding: 15px;
+        align-self: center;
+    }
+
+    &_name{
+        color: v.$secondary-color;
+        padding-left: 20px;
+    }
+
+    &_paragraph{
+        color: v.$tertiary-color;
+        padding: 0px 20px;
+    }
+
+}

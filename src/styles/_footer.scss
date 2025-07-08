@@ -1,0 +1,65 @@
+@use './base' as v;
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: v.$primary-color;
+    height: 400px;
+
+    h3 {
+        color: v.$tertiary-color;
+    }
+
+    h2 {
+        color: v.$secondary-color;
+    }
+
+    &_sections {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &_title {
+        margin: 1.5rem 0;
+    }
+
+    &_text {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &_icon {
+        font-size: 2rem;
+        color: v.$tertiary-color;
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &_title{
+        margin: 1.5rem 0;
+        color: v.$secondary-color;
+    }
+    &_content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    &_input{
+        background-color: v.$tertiary-color;
+        height: 30px;
+        width: 500px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    &_input:nth-child(3){
+        height: 150px;
+    }
+
+}

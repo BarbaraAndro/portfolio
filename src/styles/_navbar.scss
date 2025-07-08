@@ -1,0 +1,36 @@
+@use './base' as v;
+
+.navbar {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: v.$primary-color;
+
+    &_logo {
+        margin-left: 20px;
+        width: 50px;
+    }
+
+    &_img{
+        border-radius: 50px;
+        aspect-ratio: 1/1;
+    }
+
+    &_menu {
+        display: flex;
+        gap: 8rem;
+        margin-right: 6rem;
+    }
+
+    &_item {
+        color: v.$secondary-color!important;
+        font-size: 1.3rem;
+        text-decoration: none;
+    }
+}
+
+
+// @include mq-desktop{
+
+// }
