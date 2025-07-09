@@ -31,7 +31,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #294936;
+  background-color: #FFCBD4;
 }
 .navbar_logo {
   margin-left: 20px;
@@ -47,7 +47,7 @@ h2 {
   margin-right: 6rem;
 }
 .navbar_item {
-  color: #FFCBD4 !important;
+  color: #294936 !important;
   font-size: 1.3rem;
   text-decoration: none;
 }
@@ -117,6 +117,7 @@ h2 {
   gap: 100px;
   align-items: center;
   background-color: #F4EDE0;
+  padding: 100px;
 }
 .skills_sections {
   display: flex;
@@ -132,15 +133,35 @@ h2 {
   align-items: center;
   gap: 50px;
 }
+.skills_logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
 .skills_logo {
   font-size: 7rem;
   color: #294936;
   transition: all 0.3s ease;
   filter: drop-shadow(1px 1px 10px #7ead91);
+  z-index: 2;
+}
+.skills_logo-name {
+  opacity: 0;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  color: #294936;
+  filter: drop-shadow(1px 1px 10px #fd7c9f);
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 .skills_logo:hover {
   color: #427456;
   filter: drop-shadow(1px 1px 10px #fd7c9f);
+}
+.skills_logo:hover + .skills_logo-name {
+  opacity: 1;
 }
 
 .projects {
@@ -180,6 +201,39 @@ h2 {
 .projects_paragraph {
   color: #F4EDE0;
   padding: 0px 20px;
+}
+
+.about {
+  height: 600px;
+  background-color: #294936;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.about_section-text {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 20px;
+}
+.about_name {
+  color: #FFCBD4;
+  font-size: 3rem;
+}
+.about_title {
+  color: #FFCBD4;
+  font-size: 2.5rem;
+}
+.about_pargraph {
+  color: #F4EDE0;
+  font-size: 1.2rem;
+}
+.about_section-img, .about_img {
+  width: 700px;
+  height: 400px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=styles.css.map */

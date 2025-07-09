@@ -1,0 +1,35 @@
+@use './base' as v;
+
+.about{
+    height: 600px;
+    background-color: v.$primary-color;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &_section-text{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        gap: 20px;
+    }
+    &_name{
+        color: v.$secondary-color;
+        font-size: 3rem;
+    }
+    &_title{
+        color: v.$secondary-color;
+        font-size: 2.5rem;
+    }
+    &_pargraph{
+        color: v.$tertiary-color;
+        font-size: 1.2rem;
+    }
+    &_section-img, &_img{
+        width: 700px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+}

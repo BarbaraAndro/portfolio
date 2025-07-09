@@ -51,6 +51,6 @@ export const getProjects = () => {
             else {
                 reject(console.log('Error'))
             }
-        },2000)
+        },1000)
     })
 }
