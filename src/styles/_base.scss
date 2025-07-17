@@ -8,9 +8,10 @@ img{
 }
 
 .btn{
+    width: fit-content;
     border-radius: 30px;
     padding: 0.7rem 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     &_dark{
         background-color: $primary-color;
         color: $secondary-color;
@@ -28,4 +29,17 @@ input, button{
 h2{
     font-size: 1.7rem;
     font-weight: 600;
+}
+
+
+@mixin mq-tablet {
+    @media (min-width:768px) and (max-width:1199px) {
+        @content;
+    }
+}
+
+@mixin mq-desktop {
+    @media (min-width:1200px) {
+        @content;
+    }
 }

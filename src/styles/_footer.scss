@@ -1,10 +1,15 @@
 @use './base' as v;
+@use './base' as b;
 
 .footer {
     display: flex;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
     background-color: v.$primary-color;
-    height: 400px;
+    height: fit-content;
+    gap: 50px;
 
     h3 {
         color: v.$tertiary-color;
@@ -16,6 +21,7 @@
 
     &_sections {
         display: flex;
+        align-items: center;
         flex-direction: column;
         gap: 0.5rem;
     }
@@ -26,8 +32,10 @@
 
     &_text {
         display: flex;
-        gap: 1rem;
+        justify-content: center;
         align-items: center;
+        width: 300px;
+        gap: 2.5rem;
     }
 
     &_icon {
@@ -36,30 +44,66 @@
     }
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    &_title{
+    align-items: center;
+    width: 90%;
+
+    &_title {
         margin: 1.5rem 0;
         color: v.$secondary-color;
     }
-    &_content{
+
+    &_content {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         gap: 1rem;
+        width: 100%;
     }
-    &_input{
+
+    &_input {
         background-color: v.$tertiary-color;
         height: 30px;
-        width: 500px;
+        width: 90%;
+        max-width: 700px;
         border-radius: 20px;
         padding: 10px;
     }
-    &_input:nth-child(3){
+
+    &_input:nth-child(3) {
         height: 150px;
+        padding-bottom: 120px;
+    }
+}
+
+@include b.mq-desktop {
+    .footer {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0px;
+
+        &_title {
+            align-self: start;
+        }
+
+        &_text {
+            justify-content: start;
+            gap: 1rem;
+        }
     }
 
+    .form {
+        width: 50%;
+
+        &_title {
+            align-self: start;
+            padding-left: 62px;
+        }
+
+        &_input {
+            width: 500px;
+        }
+    }
 }

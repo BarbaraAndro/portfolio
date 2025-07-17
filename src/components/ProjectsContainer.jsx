@@ -11,9 +11,8 @@ const ProjectsContainer = () => {
       .then((response) => {
         setProjects(response)
       })
-      .catch(console.log('Error'))
+      .catch((error) => console.log('Error:', error))
   }, [])
-  console.log(projects)
 
   return (
     <>

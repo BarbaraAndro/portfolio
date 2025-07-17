@@ -4,9 +4,10 @@ img {
 }
 
 .btn {
+  width: fit-content;
   border-radius: 30px;
   padding: 0.7rem 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .btn_dark {
   background-color: #294936;
@@ -32,6 +33,24 @@ h2 {
   justify-content: space-between;
   align-items: center;
   background-color: #FFCBD4;
+  z-index: 4;
+}
+.navbar_menu {
+  display: none;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 20px;
+  gap: 20px;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 79px;
+}
+.navbar_menu.burger {
+  display: flex;
+}
+.navbar_item {
+  color: #294936;
 }
 .navbar_logo {
   margin-left: 20px;
@@ -41,22 +60,62 @@ h2 {
   border-radius: 50px;
   aspect-ratio: 1/1;
 }
-.navbar_menu {
-  display: flex;
-  gap: 8rem;
-  margin-right: 6rem;
+.navbar_burger {
+  display: block;
+  font-size: 2rem;
+  margin-right: 20px;
+  background: transparent;
 }
-.navbar_item {
-  color: #294936 !important;
-  font-size: 1.3rem;
-  text-decoration: none;
+.navbar_burger.burger {
+  display: none;
+}
+.navbar_cross {
+  display: block;
+  font-size: 2rem;
+  margin-right: 20px;
+  background: transparent;
+}
+.navbar_cross.cross {
+  display: none;
 }
 
+@media (min-width: 1200px) {
+  .navbar {
+    box-shadow: 0px 5px 10px rgb(145, 145, 145);
+    position: sticky;
+    top: 0px;
+  }
+  .navbar_burger {
+    display: none;
+  }
+  .navbar_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8rem;
+    margin-right: 6rem;
+    height: 80px;
+    align-items: center;
+    position: initial;
+  }
+  .navbar_item {
+    color: #294936 !important;
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+  .navbar_item:hover {
+    text-decoration: underline #294936;
+  }
+}
 .footer {
   display: flex;
+  padding-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   background-color: #294936;
-  height: 400px;
+  height: fit-content;
+  gap: 50px;
 }
 .footer h3 {
   color: #F4EDE0;
@@ -66,6 +125,7 @@ h2 {
 }
 .footer_sections {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -74,8 +134,10 @@ h2 {
 }
 .footer_text {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
   align-items: center;
+  width: 300px;
+  gap: 2.5rem;
 }
 .footer_icon {
   font-size: 2rem;
@@ -85,7 +147,8 @@ h2 {
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  width: 90%;
 }
 .form_title {
   margin: 1.5rem 0;
@@ -94,21 +157,47 @@ h2 {
 .form_content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 .form_input {
   background-color: #F4EDE0;
   height: 30px;
-  width: 500px;
+  width: 90%;
+  max-width: 700px;
   border-radius: 20px;
   padding: 10px;
 }
 .form_input:nth-child(3) {
   height: 150px;
+  padding-bottom: 120px;
 }
 
+@media (min-width: 1200px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0px;
+  }
+  .footer_title {
+    align-self: start;
+  }
+  .footer_text {
+    justify-content: start;
+    gap: 1rem;
+  }
+  .form {
+    width: 50%;
+  }
+  .form_title {
+    align-self: start;
+    padding-left: 62px;
+  }
+  .form_input {
+    width: 500px;
+  }
+}
 .skills {
   display: flex;
   flex-direction: column;
@@ -123,6 +212,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 50px;
 }
 .skills_title {
@@ -130,7 +220,8 @@ h2 {
 }
 .skills_logo-container {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 50px;
 }
 .skills_logo-wrapper {
@@ -177,11 +268,16 @@ h2 {
 }
 .projects_container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 50px;
 }
 .projects_card {
   background-color: #294936;
-  width: 300px;
+  width: 90%;
+  min-width: 270px;
+  max-width: 300px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -204,36 +300,100 @@ h2 {
 }
 
 .about {
-  height: 600px;
-  background-color: #294936;
+  height: 500px;
+  background-color: black;
+  background-image: url("/background4.jpg");
+  background-position-y: 0%;
+  background-position-x: 80%;
+  background-size: 600px auto;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.about_section-text {
-  width: 400px;
-  display: flex;
+  justify-content: end;
   flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  gap: 20px;
+  gap: 15px;
+  padding: 15px;
 }
 .about_name {
   color: #FFCBD4;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .about_title {
   color: #FFCBD4;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
-.about_pargraph {
+.about_paragraph {
   color: #F4EDE0;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  width: 90vw;
 }
-.about_section-img, .about_img {
-  width: 700px;
-  height: 400px;
-  object-fit: cover;
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .about {
+    background-size: cover;
+    background-position-y: 0%;
+    background-position-x: 20%;
+    justify-content: center;
+  }
+  .about_name {
+    font-size: 3rem;
+  }
+  .about_title {
+    font-size: 2.5rem;
+  }
+  .about_paragraph {
+    width: 300px;
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .about {
+    background-size: cover;
+    background-position-y: 50%;
+    background-position-x: 90%;
+    justify-content: center;
+    padding: 100px;
+  }
+  .about_paragraph {
+    width: 300px;
+    font-size: 1.2rem;
+  }
+  .about_name {
+    font-size: 3rem;
+  }
+  .about_title {
+    font-size: 2.5rem;
+  }
+}
+.scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: #FFCBD4;
+  border-radius: 50%;
+  position: fixed;
+  top: 90%;
+  left: 85%;
+  box-shadow: 5px 5px 10px rgba(80, 39, 39, 0.7490196078);
+}
+.scroll_icon {
+  font-size: 1.6rem;
+  color: #294936;
+}
+
+@media (min-width: 1200px) {
+  .scroll {
+    top: 90%;
+    left: 90%;
+  }
+  .scroll:hover {
+    background-color: #294936;
+    transform: scale(1.1);
+  }
+  .scroll:hover .scroll_icon {
+    color: #FFCBD4;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

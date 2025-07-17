@@ -13,13 +13,17 @@
     }
     &_container{
         display: flex;
-        gap: 50px;
-        
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;     
     }
 
     &_card {
         background-color: v.$primary-color;
-        width: 300px;
+        width: 90%;
+        min-width: 270px;
+        max-width: 300px;
         border-radius: 30px;
         display: flex;
         flex-direction: column;
@@ -45,3 +49,20 @@
     }
 
 }
+
+// @include v.mq-tablet{
+//     .projects{
+//         &_container{
+//             width: 300px;
+//         }
+//     }
+// }
+
+// @include v.mq-desktop {
+//     .projects{
+//         &_container{
+//             flex-direction: row;
+//             gap: 50px;
+//         }
+//     }
+// }

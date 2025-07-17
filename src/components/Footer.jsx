@@ -37,7 +37,7 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-            <div>
+            <div className='form'>
                 <Form/>
             </div>
         </div>

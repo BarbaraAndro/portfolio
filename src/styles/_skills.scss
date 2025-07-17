@@ -1,4 +1,5 @@
 @use './base' as v;
+//@use './base' as b;
 
 .skills {
     display: flex;
@@ -15,17 +16,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 50px;
     }
 
     &_title {
         color: #fd7c9f;
-        //color: v.$primary-color;
     }
 
     &_logo-container {
         display: flex;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 50px;
     }
 
@@ -51,12 +53,8 @@
             z-index: 5;
             color: v.$primary-color;
             filter: drop-shadow(1px 1px 10px #fd7c9f);
-            //background-color: v.$secondary-color;
             padding: 0.5rem;
             border-radius: 5px;
-            // &:hover{
-            //     opacity: 1;
-            // }
         }
 
         &:hover {
@@ -70,3 +68,20 @@
 
     }
 }
+
+// @include v.mq-tablet{
+//     .skills{
+//     &_logo-container {
+
+//     }
+// }
+// }
+
+// @include v.mq-desktop {
+//     .skills{
+
+//         &_logo-container {
+
+//     }
+//     }
+// }
