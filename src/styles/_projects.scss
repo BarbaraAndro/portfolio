@@ -1,6 +1,7 @@
 @use './base' as v;
 
 .projects {
+    scroll-margin-top: 80px;
     background-color: v.$secondary-color;
     display: flex;
     flex-direction: column;
@@ -46,6 +47,10 @@
     &_paragraph{
         color: v.$tertiary-color;
         padding: 0px 20px;
+    }
+
+    &_button{
+        margin: 0px 20px;
     }
 
 }

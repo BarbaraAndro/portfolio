@@ -15,10 +15,22 @@ img{
     &_dark{
         background-color: $primary-color;
         color: $secondary-color;
+        &:hover{
+        background-color: $secondary-color;
+        color: $primary-color;
+        box-shadow: inset 3px 3px 5px #775057,
+                    inset -3px -3px 5px #ffdae0;   
+        }
     }
     &_light{
         background-color: $secondary-color;
         color: $primary-color;
+        &:hover{
+        background-color: $primary-color;
+        color: $secondary-color;
+        box-shadow: inset 5px 5px 10px #262b28,
+                    inset -3px -3px 5px #c9ffdf;   
+        }
     }
 }
 

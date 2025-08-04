@@ -13,9 +13,19 @@ img {
   background-color: #294936;
   color: #FFCBD4;
 }
+.btn_dark:hover {
+  background-color: #FFCBD4;
+  color: #294936;
+  box-shadow: inset 3px 3px 5px #775057, inset -3px -3px 5px #ffdae0;
+}
 .btn_light {
   background-color: #FFCBD4;
   color: #294936;
+}
+.btn_light:hover {
+  background-color: #294936;
+  color: #FFCBD4;
+  box-shadow: inset 5px 5px 10px #262b28, inset -3px -3px 5px #c9ffdf;
 }
 
 input, button {
@@ -25,6 +35,56 @@ input, button {
 h2 {
   font-size: 1.7rem;
   font-weight: 600;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 1rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  color: #FFCBD4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -4px;
+  bottom: 0;
+  background-color: #294936;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  cursor: pointer;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #FFCBD4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 .navbar {
@@ -48,6 +108,7 @@ h2 {
 }
 .navbar_menu.burger {
   display: flex;
+  background-color: #FFCBD4;
 }
 .navbar_item {
   color: #294936;
@@ -88,12 +149,14 @@ h2 {
   .navbar_burger {
     display: none;
   }
+  .navbar_cross {
+    display: none;
+  }
   .navbar_menu {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 8rem;
-    margin-right: 6rem;
     height: 80px;
     align-items: center;
     position: initial;
@@ -111,7 +174,7 @@ h2 {
   display: flex;
   padding-bottom: 1rem;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   background-color: #294936;
   height: fit-content;
@@ -130,7 +193,7 @@ h2 {
   gap: 0.5rem;
 }
 .footer_title {
-  margin: 1.5rem 0;
+  margin: 1.5rem 0px 0px 0px;
 }
 .footer_text {
   display: flex;
@@ -157,21 +220,35 @@ h2 {
 .form_content {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  width: 100%;
+}
+.form_group {
+  position: relative;
   width: 100%;
 }
 .form_input {
   background-color: #F4EDE0;
   height: 30px;
-  width: 90%;
+  width: 100%;
   max-width: 700px;
   border-radius: 20px;
   padding: 10px;
 }
-.form_input:nth-child(3) {
+.form_message {
   height: 150px;
   padding-bottom: 120px;
+}
+.form_error {
+  color: rgb(255, 76, 76);
+  font-size: 0.8rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 2px;
+  z-index: 5;
 }
 
 @media (min-width: 1200px) {
@@ -188,17 +265,21 @@ h2 {
     gap: 1rem;
   }
   .form {
-    width: 50%;
-  }
-  .form_title {
-    align-self: start;
-    padding-left: 62px;
-  }
-  .form_input {
-    width: 500px;
+    width: 40%;
+    display: flex;
+    justify-content: stretch;
+    align-items: flex-start;
+    /*&_title {
+         align-self: start;
+    //     padding-left: 62px;
+    }*/
+    /*&_input {
+        max-width: 500px;
+    }*/
   }
 }
 .skills {
+  scroll-margin-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -226,7 +307,7 @@ h2 {
 }
 .skills_logo-wrapper {
   position: relative;
-  display: inline-block;
+  width: 200px;
 }
 .skills_logo {
   font-size: 7rem;
@@ -236,26 +317,38 @@ h2 {
   z-index: 2;
 }
 .skills_logo-name {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 120%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 5;
+  pointer-events: none;
+  font-size: 1.2rem;
+  font-weight: 900;
   color: #294936;
-  filter: drop-shadow(1px 1px 10px #fd7c9f);
-  padding: 0.5rem;
-  border-radius: 5px;
-}
-.skills_logo:hover {
-  color: #427456;
-  filter: drop-shadow(1px 1px 10px #fd7c9f);
-}
-.skills_logo:hover + .skills_logo-name {
-  opacity: 1;
+  background-color: #F4EDE0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+@media (min-width: 1200px) {
+  .skills_logo-name {
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .skills_logo:hover {
+    color: #427456;
+    filter: drop-shadow(1px 1px 10px #fd7c9f);
+  }
+  .skills_logo:hover + .skills_logo-name {
+    opacity: 1;
+  }
+}
 .projects {
+  scroll-margin-top: 80px;
   background-color: #FFCBD4;
   display: flex;
   flex-direction: column;
@@ -298,8 +391,12 @@ h2 {
   color: #F4EDE0;
   padding: 0px 20px;
 }
+.projects_button {
+  margin: 0px 20px;
+}
 
 .about {
+  scroll-margin-top: 80px;
   height: 500px;
   background-color: black;
   background-image: url("/background4.jpg");
@@ -354,7 +451,7 @@ h2 {
     padding: 100px;
   }
   .about_paragraph {
-    width: 300px;
+    width: 350px;
     font-size: 1.2rem;
   }
   .about_name {
@@ -362,6 +459,29 @@ h2 {
   }
   .about_title {
     font-size: 2.5rem;
+  }
+}
+@keyframes example {
+  /*       0% {
+      top: 0;
+      opacity: 0;
+  }
+
+  50% {
+      opacity: 1;
+  }
+
+  100% {
+      top: -50px;
+      opacity: 0;
+  }*/
+  0% {
+    top: -20px;
+    opacity: 1;
+  }
+  100% {
+    top: -75px;
+    opacity: 1;
   }
 }
 .scroll {
@@ -376,10 +496,26 @@ h2 {
   top: 90%;
   left: 85%;
   box-shadow: 5px 5px 10px rgba(80, 39, 39, 0.7490196078);
+  cursor: pointer;
+}
+.scroll_relative {
+  position: relative;
+}
+.scroll_arrow,
+.scroll .scroll_arrow2 {
+  display: none;
+  opacity: 0;
+  font-size: 1.6rem;
+  color: #294936;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .scroll_icon {
   font-size: 1.6rem;
   color: #294936;
+  z-index: 2;
 }
 
 @media (min-width: 1200px) {
@@ -393,6 +529,18 @@ h2 {
   }
   .scroll:hover .scroll_icon {
     color: #FFCBD4;
+  }
+  .scroll:hover .scroll_arrow {
+    display: block;
+    position: absolute;
+    font-size: 1.8rem;
+    animation: example 1.5s linear infinite;
+  }
+  .scroll:hover .scroll_arrow2 {
+    display: block;
+    position: absolute;
+    font-size: 1.8rem;
+    animation: 1.5s example 0.75s linear infinite;
   }
 }
 

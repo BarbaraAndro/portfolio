@@ -4,14 +4,16 @@ import { MdOutlineAlternateEmail } from 'react-icons/md'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { BsSuitcaseLgFill } from 'react-icons/bs'
 import Form from './Form'
+import { useTranslation } from 'react-i18next'
 
 
 const Footer = () => {
+    const { t } = useTranslation()
     return (
         <div className='footer' id='footer'>
             <div >
                 <div className='footer_sections'>
-                    <h2 className='footer_title'>Contacto</h2>
+                    <h2 className='footer_title'>{t('title4')}</h2>
                     <div className="footer_text">
                         <IoPerson className='footer_icon' />
                         <h3>Barbara Antonella Andro</h3>
@@ -38,7 +40,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='form'>
-                <Form/>
+                <Form />
             </div>
         </div>
     )

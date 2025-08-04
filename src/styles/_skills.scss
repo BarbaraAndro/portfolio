@@ -1,16 +1,15 @@
 @use './base' as v;
-//@use './base' as b;
 
 .skills {
+    scroll-margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 50px;
-    gap: 100px; //capaz se va
+    gap: 100px;
     align-items: center;
     background-color: v.$tertiary-color;
     padding: 100px;
-
 
     &_sections {
         display: flex;
@@ -33,7 +32,7 @@
 
     &_logo-wrapper {
         position: relative;
-        display: inline-block;
+        width: 200px;
     }
 
     &_logo {
@@ -43,30 +42,23 @@
         filter: drop-shadow(1px 1px 10px #7ead91);
         z-index: 2;
 
-
         &-name {
-            opacity: 0;
+            opacity: 1;
             position: absolute;
             top: 120%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 5;
+            pointer-events: none;
+            font-size: 1.2rem;
+            font-weight: 900;
             color: v.$primary-color;
-            filter: drop-shadow(1px 1px 10px #fd7c9f);
-            padding: 0.5rem;
-            border-radius: 5px;
+            background-color: v.$tertiary-color;
+            padding: 8px 16px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-
-        &:hover {
-            color: #427456;
-            filter: drop-shadow(1px 1px 10px #fd7c9f);
-        }
-
-        &:hover+.skills_logo-name {
-            opacity: 1;
-        }
-
     }
+
 }
 
 // @include v.mq-tablet{
@@ -77,11 +69,24 @@
 // }
 // }
 
-// @include v.mq-desktop {
-//     .skills{
+@include v.mq-desktop {
+    .skills {
+        &_logo {
+            &-name {
+                opacity: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
-//         &_logo-container {
+            &:hover {
+                color: #427456;
+                filter: drop-shadow(1px 1px 10px #fd7c9f);
+            }
 
-//     }
-//     }
-// }
+            &:hover+.skills_logo-name {
+                opacity: 1;
+            }
+        }
+    }
+}

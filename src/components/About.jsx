@@ -1,12 +1,15 @@
+import { useTranslation } from 'react-i18next';
 import '../styles/styles.css';
 
 const About = () => {
+    const {t} = useTranslation()
+
     return (
-        <div className='about'>
+        <div className='about' id='about'>
                 <h1 className='about_name'>Barbara Andro</h1>
-                <h2 className='about_title'>Desarrolladora Web</h2>
-                <p className='about_paragraph'>Lorem ipsum dolor sit amet consectetur. Ornare turpis lorem aliquet eleifend. Ultrices a tellus sit dictumst. Ornare blandit ut feugiat dolor quis sed feugiat ullamcorper.</p>
-                <a className='btn btn_light' href='/curriculum.pdf' target="_blank" rel="noopener noreferrer">Descargar CV</a>
+                <h2 className='about_title'>{t("profesion")}</h2>
+                <p className='about_paragraph'>{t('aboutMe')}</p>
+                <a className='btn btn_light' href='/curriculum.pdf' target="_blank" rel="noopener noreferrer">{t('cv')}</a>
         </div>
     )
 }

@@ -2,6 +2,7 @@
 
 
 .about {
+    scroll-margin-top: 80px;
     height: 500px;
     background-color: black;
     background-image: url("/background4.jpg");
@@ -40,14 +41,15 @@
         background-position-y: 0%;
         background-position-x: 20%;
         justify-content: center;
-        
+
         &_name {
             font-size: 3rem;
         }
-        
+
         &_title {
             font-size: 2.5rem;
         }
+
         &_paragraph {
             width: 300px;
             font-size: 1.2rem;
@@ -64,7 +66,7 @@
         padding: 100px;
 
         &_paragraph {
-            width: 300px;
+            width: 350px;
             font-size: 1.2rem;
 
         }

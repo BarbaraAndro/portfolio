@@ -3,12 +3,15 @@ import { ImHtmlFive } from 'react-icons/im'
 import { LuDonut } from 'react-icons/lu'
 import { SiCss3, SiFirebase, SiJavascript, SiReacthookform, SiReactrouter, SiSass } from 'react-icons/si'
 import '../styles/styles.css'
+import { useTranslation } from 'react-i18next'
 
 const SkillsContainer = () => {
+  const {t}= useTranslation()
+
   return (
     <div className='skills' id='skills'>
       <div className="skills_sections">
-        <h2 className='skills_title'>Habilidades</h2>
+        <h2 className='skills_title'>{t('title1')}</h2>
         <div className='skills_logo-container'>
           <div className='skills_logo-wrapper'>
             <ImHtmlFive className='skills_logo' />
@@ -37,7 +40,7 @@ const SkillsContainer = () => {
         </div>
       </div>
       <div className="skills_sections">
-        <h2 className='skills_title'>Librerias</h2>
+        <h2 className='skills_title'>{t('title2')}</h2>
         <div className='skills_logo-container'>
           <div className="skills_logo-wrapper">
             <SiSass className='skills_logo' />
@@ -57,7 +60,7 @@ const SkillsContainer = () => {
           </div>
           <div className="skills_logo-wrapper">
             <SiReacthookform className='skills_logo' />
-            <h4 className='skills_logo-name'>React Hook Form</h4>
+            <h4 className='skills_logo-name'>React Form</h4>
           </div>
           <div className="skills_logo-wrapper">
             <FaReact className='skills_logo' />

@@ -1,33 +1,21 @@
-import { useState } from 'react'
 import { db } from '../service/firebase'
 import '../styles/styles.css'
 import { addDoc, collection } from 'firebase/firestore'
 import Swal from 'sweetalert2'
-
+import { useForm } from 'react-hook-form'
 
 const Form = () => {
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({ mode: "all" })
 
-    const [contact, setContact] = useState({})
-
-    const contactForm = (e) => {
-        setContact({
-            ...contact,
-            [e.target.name]: e.target.value,
-        })
-        console.log(e)
-    }
-    console.log(contact)
-
-    const sendForm = (e) => {
-        e.preventDefault()
-        addDoc(collection(db, "contacts"), contact)
+    const sendForm = (dataForm) => {
+        addDoc(collection(db, "contacts"), dataForm)
             .then((res) => {
                 Swal.fire({
                     title: "Muchas gracias por su contacto",
                     text: "Proximamente estaré respondiendo su consulta!",
                     icon: "success"
                 });
-                e.target.reset();
+                reset();
             })
             .catch((err) => {
                 console.log("Ocurrio un error, intentelo nuevamente")
@@ -37,10 +25,27 @@ const Form = () => {
     return (
         <>
             <h2 className='form_title'>Contactame</h2>
-            <form className='form_content' onSubmit={sendForm}>
-                <input className='form_input' type="text" placeholder='Nombre completo' name='name' onChange={contactForm} />
-                <input className='form_input' type="text" placeholder='Email' name='email' onChange={contactForm} />
-                <input className='form_input' type="text" placeholder='Deje su mensaje aqui' name='message' onChange={contactForm} />
+            <form className='form_content' onSubmit={handleSubmit(sendForm)}>
+                <div className="form_group">
+                    <input className='form_input' type="text" placeholder='Nombre completo' {...register("name", {
+                        required: 'Debe completar con su nombre',
+                        minLength: { value: 3, message: 'El nombre debe contener al menos 3 caracteres' }
+                    })} />
+                    {errors?.name?.type === 'required' && <span className="form_error">{errors.name.message}</span>}
+                    {errors?.name?.type === 'minLength' && <span className="form_error">{errors.name.message}</span>}
+                </div>
+                <div className="form_group">
+                    <input className='form_input' type="text" placeholder='Email' {...register("email", {
+                        required: 'Debe completar con su dirección de correo electrónico',
+                        pattern: { value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, message: "Complete con un correo electrónico válido" }
+                    })} />
+                    {errors?.email?.type === 'required' && <span className="form_error">{errors.email.message}</span>}
+                    {errors?.email?.type === 'pattern' && <span className="form_error">{errors.email.message}</span>}
+                </div>
+                <div className="form_group">
+                    <input className='form_input form_message' type="text" placeholder='Deje su mensaje aqui' {...register("message", { required: 'Debe completar con un mensaje' })} />
+                    {errors?.message?.type === 'required' && <span className="form_error">{errors.message.message}</span>}
+                </div>
                 <button className='btn btn_light' type='submit'>Enviar</button>
             </form>
         </>
