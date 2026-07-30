@@ -1,5 +1,4 @@
 import { db } from '../service/firebase'
-import '../styles/styles.css'
 import { addDoc, collection } from 'firebase/firestore'
 import Swal from 'sweetalert2'
 import { useForm } from 'react-hook-form'

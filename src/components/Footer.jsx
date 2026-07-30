@@ -1,5 +1,4 @@
 import { IoPerson } from 'react-icons/io5'
-import '../styles/styles.css'
 import { MdOutlineAlternateEmail } from 'react-icons/md'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { BsSuitcaseLgFill } from 'react-icons/bs'

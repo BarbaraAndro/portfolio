@@ -2,79 +2,160 @@ import { FaBootstrap, FaFigma, FaGithub, FaReact } from 'react-icons/fa'
 import { ImHtmlFive } from 'react-icons/im'
 import { LuDonut } from 'react-icons/lu'
 import { SiCss3, SiFirebase, SiJavascript, SiReacthookform, SiReactrouter, SiSass } from 'react-icons/si'
-import '../styles/styles.css'
 import { useTranslation } from 'react-i18next'
 
+
 const SkillsContainer = () => {
-  const {t}= useTranslation()
+  const { t } = useTranslation()
 
   return (
     <div className='skills' id='skills'>
-      <div className="skills_sections">
+
+      <section className='skills_section'>
         <h2 className='skills_title'>{t('title1')}</h2>
-        <div className='skills_logo-container'>
-          <div className='skills_logo-wrapper'>
+        <div className='skills_items'>
+          <div className='skills_box'>
             <ImHtmlFive className='skills_logo' />
-            <h4 className='skills_logo-name'>HTML</h4>
+            <span className='skills_logo-name'>Html</span>
           </div>
-          <div className='skills_logo-wrapper'>
+          <div className='skills_box'>
             <SiCss3 className='skills_logo' />
-            <h4 className='skills_logo-name'>CSS</h4>
+            <span className='skills_logo-name'>CSS</span>
           </div>
-          <div className='skills_logo-wrapper'>
+          <div className='skills_box'>
             <SiJavascript className='skills_logo' />
-            <h4 className='skills_logo-name'>JavaScript</h4>
+            <span className='skills_logo-name'>JavaScript</span>
           </div>
-          <div className='skills_logo-wrapper'>
+          <div className='skills_box'>
             <FaReact className='skills_logo' />
-            <h4 className='skills_logo-name'>React</h4>
+            <span className='skills_logo-name'>React</span>
           </div>
-          <div className='skills_logo-wrapper'>
+          <div className='skills_box'>
             <FaGithub className='skills_logo' />
-            <h4 className='skills_logo-name'>GitHub</h4>
+            <span className='skills_logo-name'>Github</span>
           </div>
-          <div className='skills_logo-wrapper'>
+          <div className='skills_box'>
             <FaFigma className='skills_logo' />
-            <h4 className='skills_logo-name'>Figma</h4>
+            <span className='skills_logo-name'>Figma</span>
           </div>
         </div>
-      </div>
-      <div className="skills_sections">
+
+      </section>
+      <section className='skills_section'>
         <h2 className='skills_title'>{t('title2')}</h2>
-        <div className='skills_logo-container'>
-          <div className="skills_logo-wrapper">
+        <div className="skills_items">
+          <div className="skills_box">
             <SiSass className='skills_logo' />
-            <h4 className='skills_logo-name'>Sass</h4>
+            <span className='skills_logo-name'>Sass</span>
           </div>
-          <div className="skills_logo-wrapper">
+          <div className="skills_box">
             <FaBootstrap className='skills_logo' />
-            <h4 className='skills_logo-name'>Bootstrap</h4>
+            <span className='skills_logo-name'>Bootstrap</span>
           </div>
-          <div className="skills_logo-wrapper">
+          <div className="skills_box">
             <LuDonut className='skills_logo' />
-            <h4 className='skills_logo-name'>Sweet Alert</h4>
+            <span className='skills_logo-name'>Sweet Alert</span>
           </div>
-          <div className="skills_logo-wrapper">
+          <div className="skills_box">
             <SiFirebase className='skills_logo' />
-            <h4 className='skills_logo-name'>Firebase</h4>
+            <span className='skills_logo-name'>Firebase</span>
           </div>
-          <div className="skills_logo-wrapper">
+          <div className="skills_box">
             <SiReacthookform className='skills_logo' />
-            <h4 className='skills_logo-name'>React Form</h4>
+            <span className='skills_logo-name'>React Hook Form</span>
           </div>
-          <div className="skills_logo-wrapper">
+          <div className="skills_box">
             <FaReact className='skills_logo' />
-            <h4 className='skills_logo-name'>React Icon</h4>
+            <span className='skills_logo-name'>React Icon</span>
           </div>
-          <div className="skills_logo-wrapper">
+          <div className="skills_box">
             <SiReactrouter className='skills_logo' />
-            <h4 className='skills_logo-name'>React Router Dom</h4>
+            <span className='skills_logo-name'>React Router Dom</span>
           </div>
+
         </div>
-      </div>
+      </section>
     </div>
   )
 }
+
+
+
+
+
+
+// const SkillsContainer = () => {
+//   const {t}= useTranslation()
+
+//   return (
+//     <div className='skills' id='skills'>
+//       <div className="skills_sections">
+//         <h2 className='skills_title'>{t('title1')}</h2>
+//         <div className='skills_logo-container'>
+
+//           <div className='skills_logo-wrapper'>
+//             <ImHtmlFive className='skills_logo' />
+//             <div><h4 className='skills_logo-name'>HTML</h4></div>
+//           </div>
+
+//           <div className='skills_logo-wrapper'>
+//             <SiCss3 className='skills_logo' />
+//             <h4 className='skills_logo-name'>CSS</h4>
+//           </div>
+//           <div className='skills_logo-wrapper'>
+//             <SiJavascript className='skills_logo' />
+//             <h4 className='skills_logo-name'>JavaScript</h4>
+//           </div>
+//           <div className='skills_logo-wrapper'>
+//             <FaReact className='skills_logo' />
+//             <h4 className='skills_logo-name'>React</h4>
+//           </div>
+//           <div className='skills_logo-wrapper'>
+//             <FaGithub className='skills_logo' />
+//             <h4 className='skills_logo-name'>GitHub</h4>
+//           </div>
+//           <div className='skills_logo-wrapper'>
+//             <FaFigma className='skills_logo' />
+//             <h4 className='skills_logo-name'>Figma</h4>
+//           </div>
+//         </div>
+//       </div>
+//       <div className="skills_sections">
+//         <h2 className='skills_title'>{t('title2')}</h2>
+//         <div className='skills_logo-container'>
+//           <div className="skills_logo-wrapper">
+//             <SiSass className='skills_logo' />
+//             <h4 className='skills_logo-name'>Sass</h4>
+//           </div>
+//           <div className="skills_logo-wrapper">
+//             <FaBootstrap className='skills_logo' />
+//             <h4 className='skills_logo-name'>Bootstrap</h4>
+//           </div>
+//           <div className="skills_logo-wrapper">
+//             <LuDonut className='skills_logo' />
+//             <h4 className='skills_logo-name'>Sweet Alert</h4>
+//           </div>
+//           <div className="skills_logo-wrapper">
+//             <SiFirebase className='skills_logo' />
+//             <h4 className='skills_logo-name'>Firebase</h4>
+//           </div>
+//           <div className="skills_logo-wrapper">
+//             <SiReacthookform className='skills_logo skills_logo-hook' strokeWidth={0.8}/>
+//             <h4 className='skills_logo-name'>React Hook Form</h4>
+//           </div>
+//           <div className="skills_logo-wrapper">
+//             <FaReact className='skills_logo' />
+//             <h4 className='skills_logo-name'>React Icon</h4>
+//           </div>
+//           <div className="skills_logo-wrapper">
+//             <SiReactrouter className='skills_logo' />
+//             <h4 className='skills_logo-name'>React Router Dom</h4>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
 
 
 export default SkillsContainer

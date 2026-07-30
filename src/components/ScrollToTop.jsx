@@ -1,5 +1,4 @@
 import { FaAngleUp, FaArrowUp } from 'react-icons/fa'
-import '../styles/styles.css'
 import { useEffect, useState } from 'react'
 
 const ScrollToTop = () => {

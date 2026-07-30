@@ -1,5 +1,3 @@
-import '../styles/styles.css'
-
 const ProjectsItem = ({project}) => {
   return (
     <div className="projects_card">

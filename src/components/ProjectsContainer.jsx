@@ -1,5 +1,4 @@
 import ProjectsItem from "./ProjectsItem"
-import '../styles/styles.css'
 import { useEffect, useState } from "react"
 import { getProjects } from "../mock/AsyncService"
 import { useTranslation } from "react-i18next"

@@ -2,35 +2,23 @@ export const projects = [
 
     {
         id: 1,
-        title: 'Blopy - Información vegana',
+        title: 'Blopy - Información vegana - HTML + CSS',
         img: '/blopy.png',
-        description:'Pagina realizada en mi curso de Desarrollo Web en Coderhouse donde se aplican los conocimientos basicos de HTML y CSS. A su vex se aplican librerias tales como Sass y Bootstrap.  Blopy es una pagina donde encontraras información de lugares para comer, productos de todo tipo, noticias y mucho mas, todo vegano.',
+        description:'Blopy es un sitio web informativo desarrollado con HTML5, CSS3, Sass y Bootstrap, compuesto por cinco páginas. El proyecto presenta información sobre restaurantes, productos, noticias y otros recursos relacionados con el veganismo. Cuenta con un diseño 100% responsive implementado con Flexbox y CSS Grid, además de una estructura semántica y buenas prácticas de SEO para mejorar la accesibilidad y el posicionamiento en buscadores.',
         link:'https://blopy-alpha.vercel.app/',
-        // tools/tecnology:{
-        //     html:true;
-        //     css:true;
-        //     js:true;
-        //     react:false;
-        //}
     },
     {
         id: 2,
-        title: 'Proyecto 2',
-        img:'https://picsum.photos/202',
-        description: 'Lorem ipsum dolor sit amet consectetur. Ornare turpis lorem aliquet eleifend. Ultrices a tellus sit dictumst. Ornare blandit ut feugiat dolor quis sed feugiat ullamcorper.',
-        link:'https://ecommerce-andro.vercel.app/',
+        title: 'Ecommerce - Javascript',
+        img:'/ecommerce-Js.png',
+        description: 'Desarrollé un e-commerce funcional con JavaScript, que incluye autenticación de usuarios, filtrado de productos por categorías y un carrito de compras dinámico. Durante el proyecto apliqué conceptos fundamentales como manipulación del DOM, manejo de eventos, uso de localStorage y sessionStorage, y gestión de datos mediante arrays y objetos.',
+        link:'https://ecommerce-js-delta.vercel.app/',
     },
-    // {
-    //     title:;
-    //     img:;
-    //     description:;
-    //     link:;
-    // }
         {
         id: 3,
-        title: 'Siempre argenta - Ecommerce',
+        title: 'Siempre argenta - Ecommerce - React',
         img:'/ecommerce.png',
-        description: 'Lorem ipsum dolor sit amet consectetur. Ornare turpis lorem aliquet eleifend. Ultrices a tellus sit dictumst. Ornare blandit ut feugiat dolor quis sed feugiat ullamcorper.',
+        description: 'Siempre argenta es una Single Page Application (SPA) de e-commerce con React, enfocada en la venta de productos argentinos. La aplicación incluye navegación con React Router, listado de productos con filtros dinámicos, carrito de compras y vista de detalle mediante parámetros en la URL. Utilicé useState, useEffect, useContext y Firebase para gestionar el estado, los datos de productos y las órdenes de compra. El proyecto fue desarrollado con un enfoque en la lógica de la aplicación y está optimizado para versión desktop.',
         link:'https://ecommerce-andro.vercel.app/',
     }
     // {
