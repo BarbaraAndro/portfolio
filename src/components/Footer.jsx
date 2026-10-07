@@ -23,7 +23,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='footer_sections'>
-                    <h2 className='footer_title'>Mis redes</h2>
+                    <h2 className='footer_title'>{t('title5')}</h2>
                     <a href="https://github.com/BarbaraAndro" className="footer_text">
                         <FaGithub className='footer_icon' />
                         <h3>Github</h3>

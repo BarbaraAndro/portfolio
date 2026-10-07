@@ -2,16 +2,18 @@ import { db } from '../service/firebase'
 import { addDoc, collection } from 'firebase/firestore'
 import Swal from 'sweetalert2'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 const Form = () => {
+    const { t } = useTranslation()
     const { register, handleSubmit, formState: { errors }, reset } = useForm({ mode: "all" })
 
     const sendForm = (dataForm) => {
         addDoc(collection(db, "contacts"), dataForm)
             .then((res) => {
                 Swal.fire({
-                    title: "Muchas gracias por su contacto",
-                    text: "Proximamente estaré respondiendo su consulta!",
+                    title: t('swalFireTitle'),
+                    text: t('swalFireText'),
                     icon: "success"
                 });
                 reset();
@@ -23,29 +25,29 @@ const Form = () => {
 
     return (
         <>
-            <h2 className='form_title'>Contactame</h2>
+            <h2 className='form_title'>{t('title6')}</h2>
             <form className='form_content' onSubmit={handleSubmit(sendForm)}>
                 <div className="form_group">
-                    <input className='form_input' type="text" placeholder='Nombre completo' {...register("name", {
-                        required: 'Debe completar con su nombre',
-                        minLength: { value: 3, message: 'El nombre debe contener al menos 3 caracteres' }
+                    <input className='form_input' type="text" placeholder={t('placeholder1')} {...register("name", {
+                        required: t('message1'),
+                        minLength: { value: 3, message: t('message2') }
                     })} />
                     {errors?.name?.type === 'required' && <span className="form_error">{errors.name.message}</span>}
                     {errors?.name?.type === 'minLength' && <span className="form_error">{errors.name.message}</span>}
                 </div>
                 <div className="form_group">
-                    <input className='form_input' type="text" placeholder='Email' {...register("email", {
-                        required: 'Debe completar con su dirección de correo electrónico',
-                        pattern: { value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, message: "Complete con un correo electrónico válido" }
+                    <input className='form_input' type="text" placeholder={t('placeholder2')} {...register("email", {
+                        required: t('message3'),
+                        pattern: { value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, message: t('message4') }
                     })} />
                     {errors?.email?.type === 'required' && <span className="form_error">{errors.email.message}</span>}
                     {errors?.email?.type === 'pattern' && <span className="form_error">{errors.email.message}</span>}
                 </div>
                 <div className="form_group">
-                    <input className='form_input form_message' type="text" placeholder='Deje su mensaje aqui' {...register("message", { required: 'Debe completar con un mensaje' })} />
+                    <input className='form_input form_message' type="text" placeholder={t('placeholder3')} {...register("message", { required: t('message5') })} />
                     {errors?.message?.type === 'required' && <span className="form_error">{errors.message.message}</span>}
                 </div>
-                <button className='btn btn_light' type='submit'>Enviar</button>
+                <button className='btn btn_light' type='submit'>{t('button2')}</button>
             </form>
         </>
     )

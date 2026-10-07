@@ -42,7 +42,7 @@ const Navbar = () => {
                     <li><a className='navbar_item' href="#skills" onClick={handle}>{t('navbarItem2')}</a></li>
                     <li><a className='navbar_item' href="#projects" onClick={handle}>{t('navbarItem3')}</a></li>
                     <li><a className='navbar_item' href="#footer" onClick={handle}>{t('navbarItem4')}</a></li>
-                    <li><a className='btn btn_dark' href='/curriculum.pdf' onClick={handle} target="_blank" rel="noopener noreferrer">{t('cv')}</a></li>
+                    <li><a className='btn btn_dark' href={t('resume')} onClick={handle} target="_blank" rel="noopener noreferrer">{t('cv')}</a></li>
                 </ul>
                 <label className="switch">
                     <input type="checkbox" onChange={handleChange} />
